@@ -27,3 +27,4 @@ Route::get('/',function(){
 });
 
  Route::get('/category/create',[\App\Http\Controllers\CategoryController::class,'create']);
+ Route::post('/category/store',[\App\Http\Controllers\CategoryController::class,'store']);
