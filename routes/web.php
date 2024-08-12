@@ -25,3 +25,5 @@ Route::get('/about',function(){
 Route::get('/',function(){
   return view('backend.pages.home');
 });
+
+ Route::get('/category/create',[\App\Http\Controllers\CategoryController::class,'create']);
