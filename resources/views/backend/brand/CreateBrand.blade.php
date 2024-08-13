@@ -28,7 +28,7 @@
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">Add Category</h3>
+                <h3 class="card-title">Add Brand</h3>
               </div>
 
               @if ($errors->any())
@@ -45,15 +45,15 @@
               @endif
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="/category/store" method="POST">
+              <form action="/brand/store" method="POST">
                 @csrf
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Title</label>
+                    <label for="exampleInputEmail1">Brand Title</label>
                     <input type="text" name="title" id="exampleInputEmail1" placeholder="Enter Title">
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputPassword1">Description</label>
+                    <label for="exampleInputPassword1">Brand Description</label>
                     <input type="text" name="description" class="form-control" id="exampleInputPassword1" placeholder="Description">
                   </div>
                   <!-- <div class="form-group">

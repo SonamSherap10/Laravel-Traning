@@ -30,6 +30,7 @@
               <div class="card-header">
                 <h3 class="card-title">Add Category</h3>
               </div>
+              <!-- /.card-header -->
 
               @if ($errors->any())
               @foreach ($errors->all() as $err)
@@ -41,20 +42,18 @@
               <div class="alert alert-success">
                 {{session()->get('message')}}
               </div>
-              
               @endif
-              <!-- /.card-header -->
               <!-- form start -->
-              <form action="/category/store" method="POST">
+              <form action="/brand/update/{{$category->id}}" method="POST">
                 @csrf
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Title</label>
-                    <input type="text" name="title" id="exampleInputEmail1" placeholder="Enter Title">
+                    <label for="exampleInputEmail1">Brand Title</label>
+                    <input type="text" name="title" id="exampleInputEmail1" placeholder="Enter Title" value="{{$category->title}}">
                   </div>
                   <div class="form-group">
-                    <label for="exampleInputPassword1">Description</label>
-                    <input type="text" name="description" class="form-control" id="exampleInputPassword1" placeholder="Description">
+                    <label for="exampleInputPassword1">Brand Description</label>
+                    <input type="text" name="description" class="form-control" id="exampleInputPassword1" value="{{$category->description}}" placeholder="Description">
                   </div>
                   <!-- <div class="form-group">
                     <label for="exampleInputFile">File input</label>

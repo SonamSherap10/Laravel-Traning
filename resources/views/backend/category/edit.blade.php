@@ -31,6 +31,18 @@
                 <h3 class="card-title">Add Category</h3>
               </div>
               <!-- /.card-header -->
+
+              @if ($errors->any())
+              @foreach ($errors->all() as $err)
+                 <div class="ml-3"><p style="color: red;">{{$err}}</p></div>
+              @endforeach
+              @endif
+
+              @if (session()->has('message'))
+              <div class="alert alert-success">
+                {{session()->get('message')}}
+              </div>
+              @endif
               <!-- form start -->
               <form action="/category/update/{{$category->id}}" method="POST">
                 @csrf

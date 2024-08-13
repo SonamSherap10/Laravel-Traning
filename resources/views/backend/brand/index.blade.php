@@ -26,7 +26,7 @@
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title">DataTable with minimal features & hover style</h3><br>
-                <a href="/category/create" class="btn btn-primary sm">Add Category</a>
+                <a href="/brand/create" class="btn btn-primary sm">Add Brand</a>
               </div>
 
               @if (session()->has('message'))
@@ -40,8 +40,8 @@
                   <thead>
                   <tr>
                     <th>S.N</th>
-                    <th>Title</th>
-                    <th>Description</th>
+                    <th>Brand Title</th>
+                    <th>Brand Description</th>
                     <th>Action</th>
                  
                   </tr>

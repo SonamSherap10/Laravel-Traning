@@ -29,6 +29,11 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
+
+        $request -> validate([
+             'title'=>"required",
+             'description'=>"required"
+        ]);
         // dd($request->all());
         $category = new Categorys();
         $category ->title=$request->title;
@@ -59,7 +64,11 @@ class CategoryController extends Controller
      * Update the specified resource in storage.
      */
     public function update(Request $request, string $id)
-    {
+    {   
+  $request -> validate([
+        'title'=>"required",
+        'description'=>"required"
+   ]);
         $category = Categorys::find($id);
         $category ->title=$request->title;
         $category ->description=$request->description;
