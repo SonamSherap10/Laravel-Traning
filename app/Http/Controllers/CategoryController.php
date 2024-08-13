@@ -33,15 +33,15 @@ class CategoryController extends Controller
         $category ->title=$request->title;
         $category ->description=$request->description;
         $category -> save();
-
+        return redirect()->back()->with('message','data stored');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show()
     {
-        //
+        return view('backend.category.index');
     }
 
     /**
@@ -49,7 +49,9 @@ class CategoryController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $category = Categorys::find($id);
+        // dd($category);
+        return view('backend.category.edit',compact('category'));
     }
 
     /**
@@ -57,7 +59,11 @@ class CategoryController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $category = Categorys::find($id);
+        $category ->title=$request->title;
+        $category ->description=$request->description;
+        $category -> save();
+        return redirect()->back()->with('message','data updated');
     }
 
     /**
