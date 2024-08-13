@@ -25,7 +25,8 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">DataTable with minimal features & hover style</h3>
+                <h3 class="card-title">DataTable with minimal features & hover style</h3><br>
+                <a href="/category/create" class="btn btn-primary sm">Add Category</a>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -40,13 +41,16 @@
                   </tr>
                   </thead>
                   <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>title
-                    </td>
-                    <td>description</td>
-                    <td><button  class="btn btn-primary btn">Edit</button><button class="btn btn-danger btn">delete</button></td>
-                  </tr>
+                    @foreach ($category as $cat )
+                    <tr>
+                      <td>{{$cat->id}}</td>
+                      <td>{{$cat->title}}</td>
+                      <td>{{$cat->description}}</td>
+                    <td><a  href="/category/edit/{{$cat->id}}" class="btn btn-primary btn">Edit</a> <a href="/category/delete/{{$cat->id}}" class="btn btn-danger "> delete</a></td>
+
+                    </tr>
+                    @endforeach
+                
                   </tbody>
                   <tfoot>
                   <tr>

@@ -29,5 +29,6 @@ Route::get('/',function(){
  Route::get('/category/create',[\App\Http\Controllers\CategoryController::class,'create']);
  Route::post('/category/store',[\App\Http\Controllers\CategoryController::class,'store']);
  Route::get('/category/edit/{id}',[\App\Http\Controllers\CategoryController::class,'edit']);
- Route::get('/category/index',[\App\Http\Controllers\CategoryController::class,'show']);
+ Route::get('/category/delete/{id}',[\App\Http\Controllers\CategoryController::class,'destroy']);
+ Route::get('/category/index',[\App\Http\Controllers\CategoryController::class,'index']);
  Route::post('/category/update/{id}',[\App\Http\Controllers\CategoryController::class,'update']);

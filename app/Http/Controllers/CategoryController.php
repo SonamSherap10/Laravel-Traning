@@ -12,7 +12,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $category = Categorys::all();
+        return view('backend.category.index',compact('category'));
     }
 
     /**
@@ -71,6 +72,10 @@ class CategoryController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $category = Categorys::find($id);
+        $category->delete();
+        return redirect()->back()->with('message','data deletde');
+        
+
     }
 }
