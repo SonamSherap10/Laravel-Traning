@@ -39,3 +39,12 @@ Route::get('/',function(){
  Route::get('/brand/index',[\App\Http\Controllers\BrandController::class,'index']);
  Route::get('/brand/edit/{id}',[\App\Http\Controllers\BrandController::class,'edit']);
  Route::get('/brand/delete/{id}',[\App\Http\Controllers\BrandController::class,'destroy']);
+
+ Route::get('product/create',[\App\Http\Controllers\ProductController::class,"create"]);
+ Route::post('product/store',[\App\Http\Controllers\ProductController::class,"store"]);
+ Route::get('/product/index',[\App\Http\Controllers\ProductController::class,'index']);
+ Route::get('/product/edit/{id}',[\App\Http\Controllers\ProductController::class,'edit']);
+ Route::post('/product/update/{id}',[\App\Http\Controllers\ProductController::class,'update']);
+ Route::get('/product/delete/{id}',[\App\Http\Controllers\ProductController::class,'destroy']);
+
+
